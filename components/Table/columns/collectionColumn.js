@@ -167,11 +167,10 @@ export const collectionColumn = [
     width: 200,
     Cell: ({ row }) => (
       <div className="flex flex-col justify-center items-center gap-2">
-        <DeleteCollection collectionInfo={row.original} />
-        <button className="bg-cyan-600 text-xs text-white font-semibold px-2 py-1 rounded">
+        <button className="bg-red-600 text-xs text-white font-semibold px-2 py-1 rounded">
           EmailWrong
         </button>
-        <button className="bg-cyan-600 text-xs text-white font-semibold px-2 py-1 rounded">
+        <button className="bg-red-600 text-xs text-white font-semibold px-2 py-1 rounded">
           PassWrong
         </button>
         <button className="bg-cyan-600 text-xs text-white font-semibold px-2 py-1 rounded">
