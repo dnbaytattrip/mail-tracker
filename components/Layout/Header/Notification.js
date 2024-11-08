@@ -49,7 +49,7 @@ function Notification() {
       });
 
       const channel = pusher.subscribe(adminId);
-      channel.bind("dashboard-notification", (data) => {
+      channel.bind("new-notification", (data) => {
         setNotifications((prevNotifications) => [
           ...prevNotifications,
           `New collection added from ${data.name}`,
@@ -65,7 +65,7 @@ function Notification() {
         // channel.unbind_all();
         // channel.unbind(); // Unbind event listeners when component unmounts
         // pusher.unsubscribe("notifications");
-        channel.unbind("dashboard-notification"); // Unbind event listeners when component unmounts
+        channel.unbind("new-notification"); // Unbind event listeners when component unmounts
         pusher.unsubscribe(adminId);
       };
     }
