@@ -42,9 +42,9 @@ function Notification() {
     requestNotificationPermission();
 
     if (adminId) {
-      const pusher = new Pusher("c69be5ea3652b02905c7", {
+      const pusher = new Pusher("f47031316f13ab641256", {
         // APP_KEY
-        cluster: "mt1",
+        cluster: "ap2",
         encrypted: true,
       });
 
