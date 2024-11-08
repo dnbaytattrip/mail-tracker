@@ -2,7 +2,6 @@ import React from "react";
 import { useSession } from "next-auth/react";
 import { API_URL } from "../config/index";
 import { useRouter } from "next/router";
-import axios from "axios";
 
 function WrongPass() {
   const router = useRouter();
@@ -22,9 +21,20 @@ function WrongPass() {
     };
     const url = `${API_URL}/password/post/wrong`;
 
-    const res = await axios.post(url, values);
+    const res = await fetch(url, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    });
     const data = await res.json();
-    console.log(data);
+    if (res.ok) {
+      console.log("success", data);
+    } else {
+      console.log("error", data);
+    }
   };
   return (
     <button
