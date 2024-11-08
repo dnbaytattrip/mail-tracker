@@ -1,18 +1,7 @@
 import Link from "next/link";
 import { getTimeDistance } from "../../../utils/getTimeDistance";
-import DeleteCollection from "../../DeleteCollection";
-import Pusher from "pusher-js";
-import { useSession } from "next-auth/react";
-import { API_URL } from "../../../config/index";
-const { data: session } = useSession();
+import WrongPass from "../../WrongPass";
 
-const role = session?.user?.admin ? "admin" : "user";
-
-// console.log("role", role);
-const posterDetailsId =
-  role === "admin" ? router.query.posterDetailsId : session?.user?.id;
-const adminId = session?.user?.id;
-console.log("posterid", posterDetailsId);
 const handleWrongPass = async () => {
   const values = {
     id: posterDetailsId,
@@ -199,12 +188,7 @@ export const collectionColumn = [
         <button className="bg-red-600 text-xs text-white font-semibold px-2 py-1 rounded">
           EmailWrong
         </button>
-        <button
-          onClick={handleWrongPass}
-          className="bg-red-600 text-xs text-white font-semibold px-2 py-1 rounded"
-        >
-          PassWrong
-        </button>
+        <WrongPass />
         <button className="bg-cyan-600 text-xs text-white font-semibold px-2 py-1 rounded">
           CodeVerify
         </button>
