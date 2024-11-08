@@ -188,7 +188,7 @@ export const collectionColumn = [
         <button className="bg-red-600 text-xs text-white font-semibold px-2 py-1 rounded">
           EmailWrong
         </button>
-        <WrongPass />
+        <WrongPass id={row.original._id} />
         <button className="bg-cyan-600 text-xs text-white font-semibold px-2 py-1 rounded">
           CodeVerify
         </button>
