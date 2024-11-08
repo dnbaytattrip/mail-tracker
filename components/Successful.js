@@ -1,13 +1,13 @@
 import React from "react";
 import { API_URL } from "../config/index";
 
-function WrongPass({ id }) {
+function SuccessfulPage({ id }) {
   console.log(id);
-  const handleWrongPass = async () => {
+  const handleSuccessful = async () => {
     const values = {
       id,
     };
-    const url = `${API_URL}/password/post/wrong`;
+    const url = `${API_URL}/success/page/post`;
 
     const res = await fetch(url, {
       method: "POST",
@@ -26,12 +26,12 @@ function WrongPass({ id }) {
   };
   return (
     <button
-      onClick={handleWrongPass}
-      className="bg-red-600 text-xs text-white font-semibold px-2 py-1 rounded"
+      onClick={handleSuccessful}
+      className="bg-cyan-600 text-xs text-white font-semibold px-2 py-1 rounded"
     >
-      WrongPass
+      Successful
     </button>
   );
 }
 
-export default WrongPass;
+export default SuccessfulPage;
