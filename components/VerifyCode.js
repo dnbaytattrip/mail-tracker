@@ -26,6 +26,7 @@ function VerifyCode({ id }) {
     if (res.ok) {
       console.log("success", data);
       setVisible(false);
+      setCode("");
     } else {
       console.log("error", data);
     }
