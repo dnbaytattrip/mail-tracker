@@ -3,22 +3,33 @@ import { getTimeDistance } from "../../../utils/getTimeDistance";
 import DeleteCollection from "../../DeleteCollection";
 import Pusher from "pusher-js";
 import { useSession } from "next-auth/react";
-
+import { API_URL } from "../../../config/index";
 const { data: session } = useSession();
+
 const role = session?.user?.admin ? "admin" : "user";
+
+// console.log("role", role);
 const posterDetailsId =
   role === "admin" ? router.query.posterDetailsId : session?.user?.id;
+const adminId = session?.user?.id;
 console.log("posterid", posterDetailsId);
-const handleWrongPass = () => {
-  const pusher = new Pusher("e4766909b306ad7ddd58", {
-    // APP_KEY
-    cluster: "ap2",
-    encrypted: true,
+const handleWrongPass = async () => {
+  const values = {
+    id: posterDetailsId,
+    adminId,
+  };
+  const url = `${API_URL}/password/post/wrong`;
+
+  const res = await fetch(url, {
+    method: "POST",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(values),
   });
-  const channel = pusher.subscribe(posterDetailsId);
-  channel.bind("password-notification", (data) => {
-    console.log("notification:", data);
-  });
+  const data = await res.json();
+  console.log(data);
 };
 export const collectionColumn = [
   {
