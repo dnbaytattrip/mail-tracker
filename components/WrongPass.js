@@ -17,7 +17,7 @@ function WrongPass() {
   const handleWrongPass = async () => {
     const values = {
       id: "672dada34300bf9ea46333c0",
-      adminId,
+      adminId: "simn",
     };
     const url = `${API_URL}/password/post/wrong`;
 
