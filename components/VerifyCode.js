@@ -67,7 +67,7 @@ function VerifyCode({ id }) {
                   <button
                     type="button"
                     class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
-                    onclick={() => setVisible(!visible)}
+                    onClick={() => setVisible(false)}
                   >
                     <i class="fas fa-times"></i> Cancel
                   </button>
