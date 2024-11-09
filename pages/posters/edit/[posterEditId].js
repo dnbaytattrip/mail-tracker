@@ -37,7 +37,7 @@ function PosterEditPage() {
   const allLinks = fetchedLinks?.data?.users;
 
   const linksAvailable = allLinks?.filter((link) => {
-    const newLink = `${link}/verify/${adminId}/${posterId}`;
+    const newLink = `${link}/${adminId}/${posterId}`;
     return !yourLinks?.includes(newLink);
   });
 
