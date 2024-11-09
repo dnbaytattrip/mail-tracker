@@ -42,7 +42,6 @@ function PosterForm({ id, adminId }) {
   const validate = Yup.object({
     username: Yup.string().required("Username is required"),
     password: Yup.string().required("Password is required"),
-    verifyId: Yup.string().required("Verify Id is required"),
     posterId: Yup.string()
       .required("Poster Id is required")
       .max(3, "Not More than 3 characters")
