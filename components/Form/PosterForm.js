@@ -36,7 +36,6 @@ function PosterForm({ id, adminId }) {
     username: "",
     password: "",
     posterId: "",
-    verifyId: "",
     links: [],
   };
 
@@ -62,7 +61,6 @@ function PosterForm({ id, adminId }) {
       username: username,
       password: password,
       posterId: posterId,
-      verifyId: verifyId,
       links: links,
     };
 
@@ -94,7 +92,6 @@ function PosterForm({ id, adminId }) {
                 type="text"
                 maxLength={3}
               />
-              <TextField label="VerifyId *" name="verifyId" type="text" />
               <div className="">
                 <p className="font-semibold text-gray-600">Links *</p>
                 <div className="flex flex-col">
@@ -107,10 +104,8 @@ function PosterForm({ id, adminId }) {
                             name="links"
                             label={`${link
                               ?.split("https://")
-                              ?.join("")}/${adminId}/${
-                              formik.values.posterId
-                            }/${formik.values.verifyId}`}
-                            value={`${link}/${adminId}/${formik.values.posterId}/${formik.values.verifyId}`}
+                              ?.join("")}/${adminId}/${formik.values.posterId}`}
+                            value={`${link}/${adminId}/${formik.values.posterId}`}
                             resetonchange="true"
                           />
                         ))}

@@ -164,9 +164,9 @@ function EditPosterForm({
                           key={i}
                           label={`${link
                             ?.split("https://")
-                            ?.join("")}/${adminId}/${posterId}/${verifyId}`}
+                            ?.join("")}/${adminId}/${posterId}`}
                           name="availableLinks"
-                          value={`${link}/${adminId}/${posterId}/${verifyId}`}
+                          value={`${link}/${adminId}/${posterId}`}
                         />
                       ))}
                     </div>
