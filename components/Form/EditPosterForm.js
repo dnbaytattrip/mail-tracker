@@ -11,7 +11,6 @@ function EditPosterForm({
   id,
   posterId,
   adminId,
-  verifyId,
   username,
   password,
   posterEditId,
