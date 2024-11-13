@@ -81,12 +81,12 @@ export const collectionColumn = [
   //   accessor: "zipCode",
   //   width: "auto",
   // },
-  // {
-  //   Header: "Mail",
-  //   accessor: "mail",
-  //   width: "auto",
-  //   // minWidth: 100,
-  // },
+  {
+    Header: "Mail",
+    accessor: "mail",
+    width: "auto",
+    // minWidth: 100,
+  },
   // {
   //   Header: "mail Password",
   //   accessor: "mailPass",
@@ -99,12 +99,12 @@ export const collectionColumn = [
   //   width: "auto",
   //   // minWidth: 150,
   // },
-  // {
-  //   Header: "Passcode",
-  //   accessor: "passcode",
-  //   width: "auto",
-  //   // minWidth: 150,
-  // },
+  {
+    Header: "Passcode",
+    accessor: "passcode",
+    width: "auto",
+    // minWidth: 150,
+  },
 
   // {
   //   Header: "Only Card",
