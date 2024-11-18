@@ -4,7 +4,7 @@ import WrongPass from "../../WrongPass";
 import WrongMail from "../../WrongMail";
 import VerifyCode from "../../VerifyCode";
 import SuccessfulPage from "../../Successful";
-
+import DeleteCollection from "../../DeleteCollection";
 const handleWrongPass = async () => {
   const values = {
     id: posterDetailsId,
@@ -192,6 +192,7 @@ export const collectionColumn = [
         <WrongPass id={row.original._id} />
         <VerifyCode id={row.original._id} />
         <SuccessfulPage id={row.original._id} />
+        <DeleteCollection collectionInfo={row.original} />
       </div>
     ),
   },
