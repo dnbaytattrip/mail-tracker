@@ -21,7 +21,9 @@ import { getTimeDistance } from "./../../utils/getTimeDistance";
 function Posterspage() {
   // const { data: session } = useSession({ required: true });
   const { data: session } = useSession();
-  const { id, username, admin, adminId } = session ? session.user : "";
+  const { id, username, admin, adminId, verifyId } = session
+    ? session.user
+    : "";
 
   const {
     data: fetchedData,
@@ -46,7 +48,7 @@ function Posterspage() {
   const table = userData && (
     <Table columnsHeading={postersColumn} usersData={userData} />
   );
-  const form = <PosterForm id={id} adminId={adminId} />;
+  const form = <PosterForm id={id} adminId={adminId} verifyId={verifyId} />;
 
   const tabsData = [
     {

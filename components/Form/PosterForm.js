@@ -9,7 +9,8 @@ import { useRouter } from "next/router";
 import { useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 
-function PosterForm({ id, adminId }) {
+function PosterForm({ id, adminId, verifyId }) {
+  console.log(verifyId);
   // const { data: session } = useSession();
   // const { id, username, admin, adminId } = session ? session.user : "";
 
@@ -18,7 +19,7 @@ function PosterForm({ id, adminId }) {
   // const id = data?.user?.id;
 
   // const adminId = data?.user?.adminId;
-  const verifyId = data?.user?.verifyId;
+  // const verifyId = data?.user?.verifyId;
 
   const router = useRouter();
 
