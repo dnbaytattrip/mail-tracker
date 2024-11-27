@@ -23,6 +23,8 @@ function Layout({ children, heading }) {
 
   const { data } = useSession();
 
+  console.log("usersession", data);
+
   const admin = data?.user?.admin;
   const username = data?.user?.username;
 
