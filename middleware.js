@@ -15,6 +15,7 @@ export default async function middleware(req) {
 
   const jwt = await getToken({ req, secret });
   const user = jwt?.user?.username;
+  console.log("jwt", jwt?.user);
   const role = jwt?.user?.admin;
   const qrCodeStatus = jwt?.user?.qrCodeStatus;
   // const role = false;
