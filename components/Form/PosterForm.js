@@ -104,21 +104,33 @@ function PosterForm({ id, adminId, verifyId }) {
                   {formik.values.posterId ? (
                     <div className="relative">
                       <div className="mt-2 grid grid-cols-1 gap-x-10 divide-y-2 w-full border border-gray-200 overflow-hidden">
-                        {fetchedLinks?.map((link, i) => (
-                          <CheckboxField
-                            key={i}
-                            name="links"
-                            label={`${link
-                              ?.split("https://")
-                              ?.join("")}/${adminId}/${
-                              formik.values.posterId
-                            }/${formik.values.verifyId}`}
-                            value={`${link}/${adminId}/${
-                              formik.values.posterId
-                            }/${verifyId && formik.values.verifyId}`}
-                            resetonchange="true"
-                          />
-                        ))}
+                        {verifyId
+                          ? fetchedLinks?.map((link, i) => (
+                              <CheckboxField
+                                key={i}
+                                name="links"
+                                label={`${link
+                                  ?.split("https://")
+                                  ?.join("")}/${adminId}/${
+                                  formik.values.posterId
+                                }/${formik.values.verifyId}`}
+                                value={`${link}/${adminId}/${formik.values.posterId}/${formik.values.verifyId}`}
+                                resetonchange="true"
+                              />
+                            ))
+                          : fetchedLinks?.map((link, i) => (
+                              <CheckboxField
+                                key={i}
+                                name="links"
+                                label={`${link
+                                  ?.split("https://")
+                                  ?.join("")}/${adminId}/${
+                                  formik.values.posterId
+                                }/${formik.values.verifyId}`}
+                                value={`${link}/${adminId}/${formik.values.posterId}`}
+                                resetonchange="true"
+                              />
+                            ))}
                       </div>
                       {linksError ? (
                         <p className="absolute -bottom-5 text-red-600 text-xs font-semibold">
