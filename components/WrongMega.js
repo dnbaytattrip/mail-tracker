@@ -5,7 +5,7 @@ function WrongMega({ id }) {
   console.log(id);
   // const { query } = useRouter();
   // const { posterDetailsId } = query;
-  console.log(posterDetailsId);
+  // console.log(posterDetailsId);
   
   // const { data, isLoading } = useGetData(`/posters/details/${posterDetailsId}`);
 
