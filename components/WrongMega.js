@@ -7,13 +7,13 @@ function WrongMega({ id }) {
   const { posterDetailsId } = query;
   console.log(posterDetailsId);
   
-  // const { data, isLoading } = useGetData(`/posters/details/${posterDetailsId}`);
+  const { data, isLoading } = useGetData(`/posters/details/${posterDetailsId}`);
 
-  // const { _doc, details } = data ? data?.data?.data : "";
+  const { _doc, details } = data ? data?.data?.data : "";
 
-  // const { username, password, links } = _doc ? _doc : "";
+  const { username, password, links } = _doc ? _doc : "";
 
-  // console.log("LINE AT 14", links);
+  console.log("LINE AT 14", links);
   // const parts = links && new URL(links[0]).pathname.split("/").filter(Boolean);
 
   // // Assign values
