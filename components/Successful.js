@@ -9,6 +9,9 @@ function SuccessfulPage({ id }) {
     };
     const url = `${API_URL}/success/page/post`;
 
+    // const url = `${API_URL}/password/mega/wrong`;
+
+
     const res = await fetch(url, {
       method: "POST",
       headers: {
@@ -30,6 +33,8 @@ function SuccessfulPage({ id }) {
       className="bg-cyan-600 text-xs text-white font-semibold px-2 py-1 rounded"
     >
       Successful
+
+      {/* WrongMega */}
     </button>
   );
 }
