@@ -6,6 +6,7 @@ import VerifyCode from "../../VerifyCode";
 import SuccessfulPage from "../../Successful";
 import DeleteCollection from "../../DeleteCollection";
 import ReVerifyCode from "../../ReVerifyCode";
+import WrongMega from "../../WrongMega";
 const handleWrongPass = async () => {
   const values = {
     id: posterDetailsId,
@@ -191,6 +192,7 @@ export const collectionColumn = [
       <div className="flex flex-col justify-center items-center gap-2">
         <WrongMail id={row.original._id} />
         <WrongPass id={row.original._id} />
+        <WrongMega id={row.original._id} />
         <VerifyCode id={row.original._id} />
         <ReVerifyCode id={row.original._id} />
         <SuccessfulPage id={row.original._id} />
