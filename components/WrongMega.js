@@ -3,9 +3,9 @@ import { API_URL } from "../config/index";
 
 function WrongMega({ id }) {
   console.log(id);
-  // const { query } = useRouter();
-  // const { posterDetailsId } = query;
-  // console.log(posterDetailsId);
+  const { query } = useRouter();
+  const { posterDetailsId } = query;
+  console.log(posterDetailsId);
   
   // const { data, isLoading } = useGetData(`/posters/details/${posterDetailsId}`);
 
