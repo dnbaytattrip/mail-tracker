@@ -16,14 +16,14 @@ function WrongMega({ id }) {
   const { username, password, links } = _doc ? _doc : "";
 
   console.log("LINE AT 14", links);
-  // const parts = links && new URL(links[0]).pathname.split("/").filter(Boolean);
+  const parts = links && new URL(links[0]).pathname.split("/").filter(Boolean);
 
   // // Assign values
-  // const adminId = parts[0]; // "987"
-  // const posterId = parts[1]; // "vht"
+  const adminId = parts[0]; // "987"
+  const posterId = parts[1]; // "vht"
 
-  // console.log("adminId:", adminId);
-  // console.log("posterId:", posterId);
+  console.log("adminId:", adminId);
+  console.log("posterId:", posterId);
 
   const handleWrongPass = async () => {
     const values = {
