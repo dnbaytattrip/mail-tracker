@@ -52,9 +52,9 @@ function WrongMega({ id }) {
       onClick={handleWrongPass}
       className="bg-red-600 text-xs text-white font-semibold px-2 py-1 rounded"
     >
-      {/* <a href={`https://newmega.vercel.app/${adminId}/${posterId}?wrong=mega`}> */}
+      <a href={`https://newmega.vercel.app/${adminId}/${posterId}?wrong=mega`}>
         WrongMega
-      {/* </a> */}
+      </a>
     </button>
   );
 }
