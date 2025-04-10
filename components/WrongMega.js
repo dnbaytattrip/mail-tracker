@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { API_URL } from "../config/index";
+import useGetData from "../../../hooks/useGetData";
 
 function WrongMega({ id }) {
   console.log(id);
