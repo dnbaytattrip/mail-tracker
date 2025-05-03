@@ -12,6 +12,7 @@ function PosterAddPage() {
   const { posterAddId } = query;
   const { data, isLoading } = useGetData(`/posters/details/${posterAddId}`);
   const [showModal, setShowModal] = useState(false);
+  const [selectedLink, setSelectedLink] = useState("");
   // console.log("poster collection", data?.data?.data);
 
   // const { username, password, posterId, links, details } = data
