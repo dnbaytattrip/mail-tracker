@@ -7,8 +7,8 @@ import Loader from "../../../components/common/Loader";
 
 function PosterAddPage() {
   const { back, query } = useRouter();
-  const { posterDetailsId } = query;
-  const { data, isLoading } = useGetData(`/posters/details/${posterDetailsId}`);
+  const { posterAddId } = query;
+  const { data, isLoading } = useGetData(`/posters/details/${posterAddId}`);
 
   // console.log("poster collection", data?.data?.data);
 
