@@ -62,11 +62,6 @@ export const postersColumn = [
 
         <DeletePoster posterInfo={row.original} />
         <div className="">
-          <Link href={`/posters/add/${row.original._id}`}>
-            <button className="bg-green-600 text-xs text-white font-semibold px-2 py-1 rounded">
-              Add
-            </button>
-          </Link>
         </div>
       </div>
     ),
