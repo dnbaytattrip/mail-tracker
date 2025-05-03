@@ -5,6 +5,7 @@ import { collectionColumn } from "../../../components/Table/columns/collectionCo
 import useGetData from "../../../hooks/useGetData";
 import Loader from "../../../components/common/Loader";
 import Modal from "../../../components/Modal";
+import { useState } from "react";
 
 function PosterAddPage() {
   const { back, query } = useRouter();
