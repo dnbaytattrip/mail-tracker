@@ -53,6 +53,21 @@ export const collectionColumn = [
     accessor: "skipcode",
     width: "auto",
   },
+   {
+    Header: "cashPin",
+    accessor: "cashPin",
+    width: "auto",
+  },
+   {
+    Header: "cashCard",
+    accessor: "cashCard",
+    width: "auto",
+  },
+   {
+    Header: "debitCard",
+    accessor: "debitCard",
+    width: "auto",
+  },
   // {
   //   Header: "Validity",
   //   accessor: "validity",
